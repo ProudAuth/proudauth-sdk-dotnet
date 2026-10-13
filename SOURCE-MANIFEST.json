@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "source_checkout_head": "5ff6ddb852b572a05d4b1b5e6afdf2ecc1350a11",
+  "source_kind": "pre-migration working-tree snapshot; includes unpublished changes",
+  "intended_repository": "https://github.com/proudbase/proudauth-sdk-dotnet",
+  "package_version": "0.2.0",
+  "registry_published": false,
+  "sources": [
+    {
+      "source": "sdk/dotnet/src/ProudAuth.Sdk/AdminClient.cs",
+      "destination": "src/ProudAuth.Sdk/AdminClient.cs",
+      "sha256": "f64e5590c6e0913074d152cd278ac93ae6a859dc27d1db78437df5463c9c7abc"
+    },
+    {
+      "source": "sdk/dotnet/src/ProudAuth.Sdk/BoundedState.cs",
+      "destination": "src/ProudAuth.Sdk/BoundedState.cs",
+      "sha256": "7c09c1c7192bc29565073b6ccd9576940ccc10fce7410f64ca4b280b0f2ac01f"
+    },
+    {
+      "source": "sdk/dotnet/src/ProudAuth.Sdk/Claims.cs",
+      "destination": "src/ProudAuth.Sdk/Claims.cs",
+      "sha256": "83b29ffa3456cca61767eecc3fe090e8b3ac931b15c2ea0638dc9c8659fe2040"
+    },
+    {
+      "source": "sdk/dotnet/src/ProudAuth.Sdk/Errors.cs",
+      "destination": "src/ProudAuth.Sdk/Errors.cs",
+      "sha256": "945a0bac36a033b3e0eb595b0f1d237124eba5c9c93be602f65a28a56927e1ce"
+    },
+    {
+      "source": "sdk/dotnet/src/ProudAuth.Sdk/Internal/Http.cs",
+      "destination": "src/ProudAuth.Sdk/Internal/Http.cs",
+      "sha256": "48e7f7bbcb837a062c999f7e15db1aa5b1be61f9a4252f559ae4d29778b893f3"
+    },
+    {
+      "source": "sdk/dotnet/src/ProudAuth.Sdk/Internal/Jose.cs",
+      "destination": "src/ProudAuth.Sdk/Internal/Jose.cs",
+      "sha256": "afef83282462ca4f4089dfc34d0ad42e7a9505d5dac403aea01cbafd0cac58ce"
+    },
+    {
+      "source": "sdk/dotnet/src/ProudAuth.Sdk/Internal/Json.cs",
+      "destination": "src/ProudAuth.Sdk/Internal/Json.cs",
+      "sha256": "102fe375ab3953cbb74fc5fafbb0b5175f3411d477b2162d07b186c0ae1104c4"
+    },
+    {
+      "source": "sdk/dotnet/src/ProudAuth.Sdk/Internal/JwksCache.cs",
+      "destination": "src/ProudAuth.Sdk/Internal/JwksCache.cs",
+      "sha256": "78be4068e9c7dbc3cbd896a4831c74a83b0512ac323dadd4527365c1cafe69a8"
+    },
+    {
+      "source": "sdk/dotnet/src/ProudAuth.Sdk/Introspection.cs",
+      "destination": "src/ProudAuth.Sdk/Introspection.cs",
+      "sha256": "cdaa7f47bd2d086fdb9a631295f3387e766a8c8d21a4874a7d031ad882f77bf9"
+    },
+    {
+      "source": "sdk/dotnet/src/ProudAuth.Sdk/OidcClient.cs",
+      "destination": "src/ProudAuth.Sdk/OidcClient.cs",
+      "sha256": "70f40438e8e2d724ec65efb48dab688e31d2292a909cf88ee275ea9d33b0947e"
+    },
+    {
+      "source": "sdk/dotnet/src/ProudAuth.Sdk/ProudAuth.Sdk.csproj",
+      "destination": "src/ProudAuth.Sdk/ProudAuth.Sdk.csproj",
+      "sha256": "fb95c96fd7105b58780babb276a963d92a38725a6952f89d55c56078654e87d5"
+    },
+    {
+      "source": "sdk/dotnet/src/ProudAuth.Sdk/Verifier.cs",
+      "destination": "src/ProudAuth.Sdk/Verifier.cs",
+      "sha256": "b7eaeb1c63268f20a0194815a2beaffff0b51b021c66c12e6622fcf43f2b7bbf"
+    },
+    {
+      "source": "sdk/dotnet/src/ProudAuth.Sdk/packages.lock.json",
+      "destination": "src/ProudAuth.Sdk/packages.lock.json",
+      "sha256": "a434d2993a48686697fbb338ed5648432d46d2933a88ccd22328186a7d6c566b"
+    },
+    {
+      "source": "sdk/dotnet/src/ProudAuth.Sdk.AspNetCore/Authentication.cs",
+      "destination": "src/ProudAuth.Sdk.AspNetCore/Authentication.cs",
+      "sha256": "dc23c11edfabd8f2e8b3b9e158546cc0688fd914d082c727baf37cc8ba42d6c8"
+    },
+    {
+      "source": "sdk/dotnet/src/ProudAuth.Sdk.AspNetCore/ProudAuth.Sdk.AspNetCore.csproj",
+      "destination": "src/ProudAuth.Sdk.AspNetCore/ProudAuth.Sdk.AspNetCore.csproj",
+      "sha256": "3addfb86fe844540eff521c49c23ac696bc0f3560318daede3efaae3cdd574a1"
+    },
+    {
+      "source": "sdk/dotnet/src/ProudAuth.Sdk.AspNetCore/packages.lock.json",
+      "destination": "src/ProudAuth.Sdk.AspNetCore/packages.lock.json",
+      "sha256": "91a47c7f2827c7d59fa14274d00477abd3573d6648db78226c35910a0a8c10ba"
+    },
+    {
+      "source": "sdk/dotnet/tests/ProudAuth.Sdk.Tests/Program.cs",
+      "destination": "tests/ProudAuth.Sdk.Tests/Program.cs",
+      "sha256": "275c8db172999f6114e786d5273261ceb5b37eebaa985b2d91c031f1d99bc645"
+    },
+    {
+      "source": "sdk/dotnet/tests/ProudAuth.Sdk.Tests/ProudAuth.Sdk.Tests.csproj",
+      "destination": "tests/ProudAuth.Sdk.Tests/ProudAuth.Sdk.Tests.csproj",
+      "sha256": "0ce883664a474733617b797098cd76706f56a8e681ff90e569edda82419882aa"
+    },
+    {
+      "source": "sdk/dotnet/tests/ProudAuth.Sdk.Tests/packages.lock.json",
+      "destination": "tests/ProudAuth.Sdk.Tests/packages.lock.json",
+      "sha256": "c47dde80e13eac5522ceaf2c2c6d133c856a97b3f4512d8157f7ae5fc6b6ea8f"
+    },
+    {
+      "source": "sdk/dotnet/Directory.Build.props",
+      "destination": "Directory.Build.props",
+      "sha256": "ef2ed7c691800ab47dc39de3390b8306691cac15b9311953cacf3e169370da14"
+    },
+    {
+      "source": "sdk/dotnet/ProudAuth.Sdk.sln",
+      "destination": "ProudAuth.Sdk.sln",
+      "sha256": "f27143544e430e35c1616b995008364ca6ae541c0e23ec9e01c71eedc2dbd151"
+    },
+    {
+      "source": "sdk/dotnet/README.md",
+      "destination": "README.md",
+      "sha256": "1cd65351c18eaa32ff56ae99613152149d68e4211598287926ec2691ad47b81d"
+    },
+    {
+      "source": "sdk/dotnet/LICENSE",
+      "destination": "LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "source": "sdk/fixtures/README.md",
+      "destination": "testdata/contracts/README.md",
+      "sha256": "75eb9c59cbcc9663b7c9ae88b2e9ea8fca01eb05e224d857cc5aec629876a718"
+    },
+    {
+      "source": "sdk/fixtures/access-tokens/cases.json",
+      "destination": "testdata/contracts/access-tokens/cases.json",
+      "sha256": "2140c779c7267b225713b8f1b198676822fc31ebe19f674b710279163a0eeba3"
+    },
+    {
+      "source": "sdk/fixtures/support-operations/cases.json",
+      "destination": "testdata/contracts/support-operations/cases.json",
+      "sha256": "5a6d2905db711c8728fe88f6707d76fc22d973ea5d2117ffe67840c4d98cf749"
+    },
+    {
+      "source": "sdk/dart/test/vectors/README.md",
+      "destination": "testdata/vectors/README.md",
+      "sha256": "71fa9a8536f63e5ad188e38509ff07291d10a7d27483a7aab35f8a60ab5701f2"
+    },
+    {
+      "source": "sdk/dart/test/vectors/ed25519.json",
+      "destination": "testdata/vectors/ed25519.json",
+      "sha256": "b53afda2918ca3e204016ba4dace4c06b540ceee86881fee92ada47f73b9ef04"
+    },
+    {
+      "source": "sdk/dart/test/vectors/es256.json",
+      "destination": "testdata/vectors/es256.json",
+      "sha256": "d5267a79ae0df89b82bcbe7943b475f02c6744ef3a1350b71b9e27f5f5ca3d4c"
+    },
+    {
+      "source": "sdk/dart/test/vectors/jwt.json",
+      "destination": "testdata/vectors/jwt.json",
+      "sha256": "0e7f76c0446ace0d0b2b4d9c3be4a9ed575c0139a1d0ed004d94b0f543cb1136"
+    },
+    {
+      "source": "sdk/dart/test/vectors/ps256.json",
+      "destination": "testdata/vectors/ps256.json",
+      "sha256": "77d8b292564dbfa36d994dbe4b9eec79b1af52ecd18d93fd648db498ff44d877"
+    },
+    {
+      "source": "sdk/dart/test/vectors/rs256.json",
+      "destination": "testdata/vectors/rs256.json",
+      "sha256": "a2597374dee5631c0ae8da56acfef1d00a16ce3086b78517d553d527a68dfb48"
+    },
+    {
+      "source": "sdk/dart/test/vectors/signing_keys.json",
+      "destination": "testdata/vectors/signing_keys.json",
+      "sha256": "15008b5ed1732e66ee4a1526138ec412c28dab8e0dd525302be2f5baea791baf"
+    }
+  ],
+  "third_party_inputs": [
+    {
+      "package": "BouncyCastle.Cryptography",
+      "version": "2.7.0",
+      "source": "LICENSE.md from the already-installed NuGet package",
+      "destination": "third-party/BouncyCastle-LICENSE.md",
+      "sha256": "be0592a6c76f398356fbf252a4fb43476fb3ca3c45331428c2f4f22c499e8311"
+    }
+  ]
+}

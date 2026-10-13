@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "source_checkout_head": "5ff6ddb852b572a05d4b1b5e6afdf2ecc1350a11",
+  "source_kind": "pre-migration working-tree snapshot",
+  "contracts_owner": "https://github.com/proudbase/proudauth",
+  "files": [
+    {
+      "path": "testdata/README.md",
+      "sha256": "433b270c4bc77c72d72d119de107754da912e59611e5d777161c48a18f25d6a9"
+    },
+    {
+      "path": "testdata/contracts/README.md",
+      "sha256": "75eb9c59cbcc9663b7c9ae88b2e9ea8fca01eb05e224d857cc5aec629876a718"
+    },
+    {
+      "path": "testdata/contracts/access-tokens/cases.json",
+      "sha256": "2140c779c7267b225713b8f1b198676822fc31ebe19f674b710279163a0eeba3"
+    },
+    {
+      "path": "testdata/contracts/support-operations/cases.json",
+      "sha256": "5a6d2905db711c8728fe88f6707d76fc22d973ea5d2117ffe67840c4d98cf749"
+    },
+    {
+      "path": "testdata/vectors/README.md",
+      "sha256": "71fa9a8536f63e5ad188e38509ff07291d10a7d27483a7aab35f8a60ab5701f2"
+    },
+    {
+      "path": "testdata/vectors/ed25519.json",
+      "sha256": "b53afda2918ca3e204016ba4dace4c06b540ceee86881fee92ada47f73b9ef04"
+    },
+    {
+      "path": "testdata/vectors/es256.json",
+      "sha256": "d5267a79ae0df89b82bcbe7943b475f02c6744ef3a1350b71b9e27f5f5ca3d4c"
+    },
+    {
+      "path": "testdata/vectors/jwt.json",
+      "sha256": "0e7f76c0446ace0d0b2b4d9c3be4a9ed575c0139a1d0ed004d94b0f543cb1136"
+    },
+    {
+      "path": "testdata/vectors/ps256.json",
+      "sha256": "77d8b292564dbfa36d994dbe4b9eec79b1af52ecd18d93fd648db498ff44d877"
+    },
+    {
+      "path": "testdata/vectors/rs256.json",
+      "sha256": "a2597374dee5631c0ae8da56acfef1d00a16ce3086b78517d553d527a68dfb48"
+    },
+    {
+      "path": "testdata/vectors/signing_keys.json",
+      "sha256": "15008b5ed1732e66ee4a1526138ec412c28dab8e0dd525302be2f5baea791baf"
+    }
+  ]
+}

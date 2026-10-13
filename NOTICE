@@ -1,0 +1,10 @@
+ProudAuth SDK for .NET
+Copyright 2026 The ProudAuth Authors
+
+Extracted from the ProudAuth working tree with original Apache-2.0 attribution.
+SOURCE-MANIFEST.json records the pre-migration source HEAD and input hashes.
+No package registry release has been published by this extraction.
+
+Runtime dependency: BouncyCastle.Cryptography 2.7.0 (MIT). Its license text is
+in third-party/BouncyCastle-LICENSE.md. Synthetic Go signature vectors are
+documented in testdata/vectors/README.md.

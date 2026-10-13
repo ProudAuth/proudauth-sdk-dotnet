@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../../src/ProudAuth.Sdk/ProudAuth.Sdk.csproj" />
+    <ProjectReference Include="../../src/ProudAuth.Sdk.AspNetCore/ProudAuth.Sdk.AspNetCore.csproj" />
+    <None Include="../../testdata/contracts/**/*.json" Link="fixtures/%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="../../testdata/vectors/*.json" Link="vectors/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

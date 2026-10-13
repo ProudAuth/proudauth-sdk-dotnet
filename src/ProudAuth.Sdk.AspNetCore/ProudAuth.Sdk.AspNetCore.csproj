@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Version>0.2.0</Version>
+    <PackageId>ProudAuth.Sdk.AspNetCore</PackageId>
+    <Description>ASP.NET Core authentication and middleware for ProudAuth.</Description>
+    <RepositoryUrl>https://github.com/proudbase/proudauth-sdk-dotnet</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageProjectUrl>https://docs.proudauth.com/</PackageProjectUrl>
+    <Authors>The ProudAuth Authors</Authors>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <ProjectReference Include="../ProudAuth.Sdk/ProudAuth.Sdk.csproj" />
+    <None Include="../../README.md" Pack="true" PackagePath="/" />
+    <None Include="../../LICENSE" Pack="true" PackagePath="/" />
+    <None Include="../../NOTICE" Pack="true" PackagePath="/" />
+    <None Include="../../third-party/BouncyCastle-LICENSE.md" Pack="true" PackagePath="third-party/" />
+  </ItemGroup>
+</Project>

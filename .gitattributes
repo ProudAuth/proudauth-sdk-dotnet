@@ -1,0 +1,4 @@
+* text=auto
+# Integrity checks compare these vendored inputs byte-for-byte on every OS.
+testdata/** -text
+third-party/** -text whitespace=cr-at-eol

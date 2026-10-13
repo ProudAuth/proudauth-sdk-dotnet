@@ -1,0 +1,39 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    timeout-minutes: 20
+    strategy:
+      matrix:
+        os: [ubuntu-24.04, macos-14, windows-2022]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-dotnet@26b0ec14cb23fa6904739307f278c14f94c95bf1 # v5
+        with:
+          dotnet-version: "8.0.x"
+      - name: Verify vendored contracts
+        run: python scripts/check-contracts.py
+      - name: Locked restore
+        run: dotnet restore ProudAuth.Sdk.sln --locked-mode
+      - name: Build
+        run: dotnet build ProudAuth.Sdk.sln -c Release --no-restore
+      - name: Execute the SDK test runner
+        run: dotnet run --project tests/ProudAuth.Sdk.Tests -c Release --no-build --no-restore
+      - name: Formatting and NuGet packages
+        run: |
+          dotnet format ProudAuth.Sdk.sln --verify-no-changes --no-restore
+          dotnet pack ProudAuth.Sdk.sln -c Release -o artifacts --no-build --no-restore

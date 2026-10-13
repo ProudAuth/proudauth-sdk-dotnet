@@ -1,0 +1,12 @@
+/.DS_Store
+**/bin/
+**/obj/
+/artifacts/
+/TestResults/
+*.user
+*.suo
+
+.env
+.env.*
+!.env.example
+/secrets/
