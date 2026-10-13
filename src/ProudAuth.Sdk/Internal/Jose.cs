@@ -6,6 +6,7 @@ using Org.BouncyCastle.Crypto.Parameters;
 using Org.BouncyCastle.Crypto.Signers;
 using Org.BouncyCastle.Crypto.Digests;
 using Org.BouncyCastle.Crypto.Engines;
+using Org.BouncyCastle.Crypto.Encodings;
 
 namespace ProudAuth.Sdk.Internal;
 
@@ -59,7 +60,7 @@ internal static class Jose
                 default: return false;
             }
         }
-        catch (Exception e) when (e is VerifierException or CryptographicException or ArgumentException) { return false; }
+        catch (Exception e) when (e is VerifierException or CryptographicException or ArgumentException or PlatformNotSupportedException) { return false; }
     }
     private static RSA Rsa(JsonElement k)
     {
@@ -93,8 +94,7 @@ internal static class Jose
             switch (algorithm)
             {
                 case "RS256" when key.Str("kty") == "RSA":
-                    using (var rsa = Rsa(key)) return rsa.VerifyData(jws.Input, jws.Signature, HashAlgorithmName.SHA256,
-                        RSASignaturePadding.Pkcs1);
+                    return VerifyRs256(key, jws);
                 case "PS256" when key.Str("kty") == "RSA":
                     // Native PSS providers differ on non-byte-aligned RSA moduli. Bouncy Castle matches the Go oracle.
                     var modulus = new Org.BouncyCastle.Math.BigInteger(1, Decode(key.Str("n")));
@@ -114,7 +114,25 @@ internal static class Jose
                 default: return false;
             }
         }
-        catch (Exception e) when (e is CryptographicException or ArgumentException or VerifierException or Org.BouncyCastle.Crypto.CryptoException) { return false; }
+        catch (Exception e) when (e is CryptographicException or ArgumentException or VerifierException or PlatformNotSupportedException or Org.BouncyCastle.Crypto.CryptoException) { return false; }
+    }
+    private static bool VerifyRs256(JsonElement key, Jws jws)
+    {
+        using var rsa = Rsa(key);
+        var parameters = rsa.ExportParameters(false);
+        if (jws.Signature.Length != parameters.Modulus!.Length) return false;
+        // Windows native RSA accepts a DigestInfo with omitted NULL parameters.
+        // Decode PKCS#1 v1.5 with the library, then require the exact SHA-256 DER
+        // encoding used by the shared Go oracle on every supported platform.
+        var decoder = new Pkcs1Encoding(new RsaEngine());
+        decoder.Init(false, new RsaKeyParameters(false,
+            new Org.BouncyCastle.Math.BigInteger(1, parameters.Modulus),
+            new Org.BouncyCastle.Math.BigInteger(1, parameters.Exponent!)));
+        var digestInfo = decoder.ProcessBlock(jws.Signature, 0, jws.Signature.Length);
+        Span<byte> expected = stackalloc byte[51];
+        Convert.FromHexString("3031300d060960864801650304020105000420").CopyTo(expected);
+        SHA256.HashData(jws.Input, expected[19..]);
+        return CryptographicOperations.FixedTimeEquals(expected, digestInfo);
     }
     internal static bool Equal(string a, string b) => CryptographicOperations.FixedTimeEquals(Encoding.UTF8.GetBytes(a), Encoding.UTF8.GetBytes(b));
 }

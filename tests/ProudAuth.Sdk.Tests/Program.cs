@@ -182,6 +182,41 @@ internal sealed class Suite
     }
     private async Task VerifierTests()
     {
+        await Test("RS256 rejects noncanonical DigestInfo through public verification", async () =>
+        {
+            var valid = Sign();
+            var input = Jose.Parse(valid, 8192).Input;
+            var parameters = rsa.ExportParameters(true); // Ephemeral test key only.
+            var digestInfo = Convert.FromHexString("302f300b06096086480165030402010420")
+                .Concat(SHA256.HashData(input)).ToArray(); // Deliberately omit NULL.
+            var encoded = Enumerable.Repeat((byte)0xff, parameters.Modulus!.Length).ToArray();
+            encoded[0] = 0; encoded[1] = 1; encoded[encoded.Length - digestInfo.Length - 1] = 0;
+            digestInfo.CopyTo(encoded, encoded.Length - digestInfo.Length);
+            var signature = System.Numerics.BigInteger.ModPow(
+                new System.Numerics.BigInteger(encoded, isUnsigned: true, isBigEndian: true),
+                new System.Numerics.BigInteger(parameters.D!, isUnsigned: true, isBigEndian: true),
+                new System.Numerics.BigInteger(parameters.Modulus, isUnsigned: true, isBigEndian: true))
+                .ToByteArray(isUnsigned: true, isBigEndian: true);
+            var padded = new byte[parameters.Modulus.Length];
+            signature.CopyTo(padded, padded.Length - signature.Length);
+            var malformed = valid[..(valid.LastIndexOf('.') + 1)] + Jose.Encode(padded);
+            using var http = KeyClient();
+            using var verifier = NewVerifier(http);
+            await Error("signature", () => verifier.VerifyAsync(malformed));
+            Equal("usr_one", (await verifier.VerifyAsync(valid)).Subject);
+        });
+        await Test("invalid EC JWKS entries cannot prevent a valid RSA token", async () =>
+        {
+            var invalid = Load("vectors/es256.json").Get("invalid_keys").EnumerateArray()
+                .Where(x => x.Str("name") is "off_curve" or "x_not_reduced" or "point_at_p")
+                .Select(x => x.Get("jwk")).ToArray();
+            Equal(3, invalid.Length);
+            using var http = new HttpClient(new Handler((_, _) => Task.FromResult(Response(new { keys = invalid.Append(Jwk).ToArray() }))));
+            using var verifier = NewVerifier(http);
+            Equal("usr_one", (await verifier.VerifyAsync(Sign())).Subject);
+            foreach (var key in invalid)
+                True(!Jose.Verify("ES256", key, new(default, default, [], new byte[64])));
+        });
         await Test("claims helpers enforce trusted organization and scopes", async () =>
         {
             using var http = KeyClient(); using var v = NewVerifier(http); var c = await v.VerifyAsync(Sign());

@@ -5,7 +5,7 @@
     <Description>ASP.NET Core authentication and middleware for ProudAuth.</Description>
     <RepositoryUrl>https://github.com/proudbase/proudauth-sdk-dotnet</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageProjectUrl>https://docs.proudauth.com/</PackageProjectUrl>
+    <PackageProjectUrl>https://proudauth.com/docs/</PackageProjectUrl>
     <Authors>The ProudAuth Authors</Authors>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>

@@ -20,8 +20,18 @@ Dart used pub get --offline; .NET used only local feeds and NuGetAudit=false.
 Generated build outputs/dependencies and temporary consumer directories were
 removed after verification. Dependency lockfiles and synthetic vectors remain.
 Final documentation/repository metadata edits do not change runtime behavior.
-No GitHub or registry publication was performed by this staging work. Independent
-CI is prepared but has not run yet for this repository.
+The staging checks preceded public source publication. The reviewed source is
+now public at [`proudbase/proudauth-sdk-dotnet`](https://github.com/proudbase/proudauth-sdk-dotnet).
+No package-registry release or SDK release tag has been published.
+
+The [initial CI matrix](https://github.com/proudbase/proudauth-sdk-dotnet/actions/runs/38454592098)
+passed Linux/macOS but exposed six Windows failures: native RSA accepted three
+noncanonical DigestInfo vectors, and invalid EC points threw a platform exception.
+The verifier now requires exact SHA-256 DER encoding and treats unsupported EC
+key imports as unusable keys. Existing vectors remain unchanged; two additional
+public-verifier regression cases cover both behaviors. Post-fix local validation:
+**344 tests pass**, Release build/format and both package builds pass.
+The corrected Windows/Linux/macOS matrix must pass before it is reported complete.
 
 Excluded: original .git history, actual .env/credentials, deployment state,
 private screenshots/database backups, SDK caches/build output, image archives,

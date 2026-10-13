@@ -15,9 +15,11 @@ Apache-2.0. The solution contains two NuGet packages:
 | `ProudAuth.Sdk.AspNetCore` | ASP.NET Core authentication scheme and bearer middleware; depends on `ProudAuth.Sdk` |
 
 RS256, PS256, ES256 and EdDSA (Ed25519) are supported. The SDK uses .NET
-cryptography for RS256 and ES256, and
+cryptography for ES256 and public-key import, and
 [BouncyCastle.Cryptography 2.7.0](https://www.nuget.org/packages/BouncyCastle.Cryptography/2.7.0)
-for Ed25519 and RSA-PSS (including non-byte-aligned RSA keys).
+for Ed25519 and RSA verification (including non-byte-aligned RSA-PSS keys).
+RS256 requires the canonical SHA-256 DigestInfo encoding on every platform.
+Invalid EC keys are skipped without disrupting valid keys in the same JWKS.
 `none`, HMAC, private keys and RSA keys below 2048 bits are refused.
 
 ## Build and install
