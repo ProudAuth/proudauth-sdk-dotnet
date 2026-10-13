@@ -31,7 +31,11 @@ The verifier now requires exact SHA-256 DER encoding and treats unsupported EC
 key imports as unusable keys. Existing vectors remain unchanged; two additional
 public-verifier regression cases cover both behaviors. Post-fix local validation:
 **344 tests pass**, Release build/format and both package builds pass.
-The corrected Windows/Linux/macOS matrix must pass before it is reported complete.
+The [corrected independent CI matrix](https://github.com/proudbase/proudauth-sdk-dotnet/actions/runs/38455524378)
+passed at commit `a555f8c6b6f72244c2692aa520ac4ed501fe2bcb` on
+Windows 2022, Ubuntu 24.04 and macOS 14: all 344 tests, locked restore, Release
+build, formatting and both NuGet package builds. No fixture expectations were
+weakened or OS skipped. Private vulnerability reporting is enabled.
 
 Excluded: original .git history, actual .env/credentials, deployment state,
 private screenshots/database backups, SDK caches/build output, image archives,
