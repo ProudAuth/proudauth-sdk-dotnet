@@ -4,7 +4,7 @@
 > No package-registry release or stable-support window is promised yet.
 > [Documentation](https://proudauth.com/docs/) · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md)
 
-[![CI](https://github.com/proudbase/proudauth-sdk-dotnet/actions/workflows/ci.yml/badge.svg)](https://github.com/proudbase/proudauth-sdk-dotnet/actions/workflows/ci.yml)
+[![CI](https://github.com/proudauth/proudauth-sdk-dotnet/actions/workflows/ci.yml/badge.svg)](https://github.com/proudauth/proudauth-sdk-dotnet/actions/workflows/ci.yml)
 
 First-party backend SDK for **.NET 8 or later**, version **0.2.0**, unpublished.
 Apache-2.0. The solution contains two NuGet packages:

@@ -3,7 +3,7 @@
     <Version>0.2.0</Version>
     <PackageId>ProudAuth.Sdk.AspNetCore</PackageId>
     <Description>ASP.NET Core authentication and middleware for ProudAuth.</Description>
-    <RepositoryUrl>https://github.com/proudbase/proudauth-sdk-dotnet</RepositoryUrl>
+    <RepositoryUrl>https://github.com/proudauth/proudauth-sdk-dotnet</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageProjectUrl>https://proudauth.com/docs/</PackageProjectUrl>
     <Authors>The ProudAuth Authors</Authors>
