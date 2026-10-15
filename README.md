@@ -1,10 +1,19 @@
+<p align="center">
+  <a href="https://proudauth.com"><img src="https://raw.githubusercontent.com/ProudAuth/.github/main/assets/banner-proudauth-sdk-dotnet.png" alt="ProudAuth SDK for .NET" width="100%"></a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/ProudAuth/proudauth-sdk-dotnet"><img alt=".NET" src="https://img.shields.io/badge/.NET-SDK-3ee6b0?logo=dotnet&logoColor=3ee6b0&style=for-the-badge&labelColor=06120e"></a>
+  <a href="https://github.com/ProudAuth/proudauth-sdk-dotnet/actions/workflows/ci.yml"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/ProudAuth/proudauth-sdk-dotnet/ci.yml?branch=main&label=ci&style=for-the-badge&labelColor=06120e"></a>
+  <a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/license-Apache--2.0-3ee6b0?style=for-the-badge&labelColor=06120e"></a>
+  <a href="https://proudauth.com/docs/sdks/dotnet/"><img alt="Documentation" src="https://img.shields.io/badge/docs-proudauth.com-3ee6b0?style=for-the-badge&labelColor=06120e"></a>
+</p>
+
 # ProudAuth SDK for .NET
 
 > **Repository status:** public standalone source; package version 0.2.0 remains unpublished.
 > No package-registry release or stable-support window is promised yet.
 > [Documentation](https://proudauth.com/docs/) · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md)
-
-[![CI](https://github.com/proudauth/proudauth-sdk-dotnet/actions/workflows/ci.yml/badge.svg)](https://github.com/proudauth/proudauth-sdk-dotnet/actions/workflows/ci.yml)
 
 First-party backend SDK for **.NET 8 or later**, version **0.2.0**, unpublished.
 Apache-2.0. The solution contains two NuGet packages:
