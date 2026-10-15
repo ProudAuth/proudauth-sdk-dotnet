@@ -3,7 +3,7 @@
     <Version>0.2.0</Version>
     <PackageId>ProudAuth.Sdk</PackageId>
     <Description>ProudAuth token verification, introspection, support access, bounded revocation state, OIDC BFF and administration client.</Description>
-    <RepositoryUrl>https://github.com/proudbase/proudauth-sdk-dotnet</RepositoryUrl>
+    <RepositoryUrl>https://github.com/proudauth/proudauth-sdk-dotnet</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageProjectUrl>https://proudauth.com/docs/</PackageProjectUrl>
     <Authors>The ProudAuth Authors</Authors>
