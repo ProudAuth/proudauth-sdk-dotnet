@@ -259,6 +259,34 @@ across processes. Logout clears locally even if revocation fails.
 `TokenSet.ToString()` is redacted and token fields are excluded from JSON;
 persist the fields explicitly in your trusted server-side store.
 
+### Using the ASP.NET Core OpenID Connect handler instead
+
+`Microsoft.AspNetCore.Authentication.OpenIdConnect` (and Microsoft.Identity.Web
+on top of it) works with ProudAuth once three options match the server's
+profile. ProudAuth accepts only the `query`, `query.jwt` and `jwt` response
+modes and only the authorization code flow with PKCE; the handler's default
+`form_post` response mode is refused with `invalid_request`
+([protocol profile, "Not supported"](https://github.com/proudauth/proudauth/blob/main/docs/protocols/oauth-oidc-profile.md)).
+
+```csharp
+builder.Services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
+    .AddCookie()
+    .AddOpenIdConnect(options =>
+    {
+        options.Authority = "https://id.example.com/realms/main";
+        options.ClientId = "orders-bff";
+        options.ClientSecret = bffClientSecret;
+        options.ResponseType = OpenIdConnectResponseType.Code;
+        options.ResponseMode = OpenIdConnectResponseMode.Query;
+        options.UsePkce = true;
+        options.Scope.Add("orders:read");
+    });
+```
+
+This guidance follows the published profile; no automated test in this
+repository or in the service exercises the ASP.NET Core handler against
+ProudAuth yet.
+
 ## Administration
 
 ```csharp
